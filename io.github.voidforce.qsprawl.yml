@@ -30,9 +30,9 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://api.github.com/repos/libxmp/libxmp/zipball/libxmp-4.6.1
+        url: https://api.github.com/repos/libxmp/libxmp/zipball/libxmp-4.6.2
         dest-filename: libxmp.zip
-        sha256: 88a2edd48aaf61899b0a379daabc68148482a300884113ba61cc248d10faa12b
+        sha256: cf1aae7a213e2f0859d1daa845534dc814bc41a2627671d436ec0afe25e72d47
         x-checker-data:
           type: json
           url: https://api.github.com/repos/libxmp/libxmp/releases/latest
@@ -54,8 +54,8 @@ modules:
     buildsystem: simple
     sources:
       - type: archive
-        url: "https://github.com/lavenderdotpet/LibreQuake/releases/download/v0.08-beta/full.zip"
-        sha256: "b360ff9b2ba3c01da79616fb8d433abe4bbcbe38ec10b8eb71884eba3ac09534"
+        url: https://github.com/lavenderdotpet/LibreQuake/releases/download/v0.08-beta/full.zip
+        sha256: b360ff9b2ba3c01da79616fb8d433abe4bbcbe38ec10b8eb71884eba3ac09534
         x-checker-data:
           type: json
           url: https://api.github.com/repos/lavenderdotpet/LibreQuake/releases/latest
@@ -84,8 +84,9 @@ modules:
           - sprawl96 +game sprawl "$@"
           - if [[ "$?" != "0" ]]; then
           - zenity --error --width=400 --title "SPRAWL 96 exited with an error" \
-              --text "For a detailed error message, please run SPRAWL 96 from a terminal window using\n \
-              <tt><b>flatpak run $FLATPAK_ID</b></tt>." --ok-label "Quit"
+            --text "For a detailed error message, please run SPRAWL 96 from a terminal
+            window using\n \ <tt><b>flatpak run $FLATPAK_ID</b></tt>." --ok-label
+            "Quit"
           - fi
       - type: patch
         path: userdir-log.patch
