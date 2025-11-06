@@ -83,9 +83,10 @@ modules:
           - cd /app/bin
           - sprawl96 +game sprawl "$@"
           - if [[ "$?" != "0" ]]; then
+          - export ERRMSG="For a detailed error message, please run SPRAWL 96"
+          - export ERRMSG="$ERRMSG from a terminal using"
           - zenity --error --width=400 --title "SPRAWL 96 exited with an error" \
-            --text "For a detailed error message, please run SPRAWL 96 from a terminal
-            window using\n \ <tt><b>flatpak run $FLATPAK_ID</b></tt>." --ok-label
+            --text "$ERRMSG\n<tt><b>flatpak run $FLATPAK_ID</b></tt>." --ok-label
             "Quit"
           - fi
       - type: patch
