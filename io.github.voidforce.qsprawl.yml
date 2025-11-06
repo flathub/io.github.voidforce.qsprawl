@@ -68,14 +68,14 @@ modules:
     buildsystem: simple
     sources:
       - type: archive
-        url: https://api.github.com/repos/VoidForce/QSprawl/zipball/22b9b674ee4bf2d38fb97253d3078200601cafc1
+        url: https://api.github.com/repos/VoidForce/QSprawl/zipball/b086b1b59d4f335236f34d0a324583eacd278306
         dest-filename: qsprawl.zip
-        sha256: 1c6d0039768de651544e671dac0834dcfd858a18767981803487ee4eb7c4ba93
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/voidforce/qsprawl/branches/main
-          tag-query: .tag
-          commit-query: .commit.sha
+        sha256: 465c21b595776b6456c4a52fc79b81b35dfb59c69ef9c60701ada309ce2dc674
+        # x-checker-data:
+        #   type: json
+        #   url: https://api.github.com/repos/voidforce/qsprawl/branches/main
+        #   tag-query: .tag
+        #   commit-query: .commit.sha
       - type: script
         dest-filename: io.github.voidforce.qsprawl.sh
         commands:
