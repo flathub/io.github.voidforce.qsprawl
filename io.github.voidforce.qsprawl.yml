@@ -30,9 +30,9 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://api.github.com/repos/libxmp/libxmp/zipball/libxmp-4.6.1
+        url: https://api.github.com/repos/libxmp/libxmp/zipball/libxmp-4.6.3
         dest-filename: libxmp.zip
-        sha256: 88a2edd48aaf61899b0a379daabc68148482a300884113ba61cc248d10faa12b
+        sha256: f761dedfa698e37b240112ed8531b94dda199261f0cac338829a7f3dc0a933ef
         x-checker-data:
           type: json
           url: https://api.github.com/repos/libxmp/libxmp/releases/latest
@@ -54,8 +54,8 @@ modules:
     buildsystem: simple
     sources:
       - type: archive
-        url: "https://github.com/lavenderdotpet/LibreQuake/releases/download/v0.08-beta/full.zip"
-        sha256: "b360ff9b2ba3c01da79616fb8d433abe4bbcbe38ec10b8eb71884eba3ac09534"
+        url: https://github.com/lavenderdotpet/LibreQuake/releases/download/v0.09-beta/full.zip
+        sha256: 623e463b35811216244f9ba15e0c45abc1765288650b5e3d36a899b35e4bcf3d
         x-checker-data:
           type: json
           url: https://api.github.com/repos/lavenderdotpet/LibreQuake/releases/latest
@@ -68,14 +68,14 @@ modules:
     buildsystem: simple
     sources:
       - type: archive
-        url: https://api.github.com/repos/VoidForce/QSprawl/zipball/22b9b674ee4bf2d38fb97253d3078200601cafc1
+        url: https://api.github.com/repos/VoidForce/QSprawl/zipball/b086b1b59d4f335236f34d0a324583eacd278306
         dest-filename: qsprawl.zip
-        sha256: 1c6d0039768de651544e671dac0834dcfd858a18767981803487ee4eb7c4ba93
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/voidforce/qsprawl/branches/main
-          tag-query: .tag
-          commit-query: .commit.sha
+        sha256: 465c21b595776b6456c4a52fc79b81b35dfb59c69ef9c60701ada309ce2dc674
+        # x-checker-data:
+        #   type: json
+        #   url: https://api.github.com/repos/voidforce/qsprawl/branches/main
+        #   tag-query: .tag
+        #   commit-query: .commit.sha
       - type: script
         dest-filename: io.github.voidforce.qsprawl.sh
         commands:
@@ -83,9 +83,11 @@ modules:
           - cd /app/bin
           - sprawl96 +game sprawl "$@"
           - if [[ "$?" != "0" ]]; then
+          - export ERRMSG="For a detailed error message, please run SPRAWL 96"
+          - export ERRMSG="$ERRMSG from a terminal using"
           - zenity --error --width=400 --title "SPRAWL 96 exited with an error" \
-              --text "For a detailed error message, please run SPRAWL 96 from a terminal window using\n \
-              <tt><b>flatpak run $FLATPAK_ID</b></tt>." --ok-label "Quit"
+            --text "$ERRMSG\n<tt><b>flatpak run $FLATPAK_ID</b></tt>." --ok-label
+            "Quit"
           - fi
       - type: patch
         path: userdir-log.patch
