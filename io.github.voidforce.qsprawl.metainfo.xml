@@ -11,6 +11,7 @@
   <project_license>GPL-2.0-only</project_license>
   <launchable type="desktop-id">io.github.voidforce.qsprawl.desktop</launchable>
   <url type="homepage">https://www.slipseer.com/index.php?resources/sprawl-96.398/</url>
+  <url type="vcs-browser">https://github.com/voidforce/qsprawl</url>
   <description>
     <p>SPRAWL 96 is a celebration of our retro shooter SPRAWL, released for the first anniversary of SPRAWL's release. It’s also our way of giving thanks and giving back to the communities which made SPRAWL possible.</p>
     <p>SPRAWL was originally built on the Darkplaces Quake engine, and the resources provided by nearly 30 years of dedicated modders made it possible to get it started.</p>
