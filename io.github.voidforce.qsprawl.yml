@@ -62,8 +62,9 @@ modules:
           version-query: .tag_name
           url-query: .assets[] | select(.name=="full.zip") | .browser_download_url
     build-commands:
-      - mkdir -p /app/bin/sprawl
+      - mkdir -p /app/bin/sprawl /app/share/doc/librequake
       - install -vm644 -t /app/bin/sprawl id1/pak0.pak id1/pak1.pak
+      - cp -vr id1/docs/* /app/share/doc/librequake/
   - name: qsprawl
     buildsystem: simple
     sources:
